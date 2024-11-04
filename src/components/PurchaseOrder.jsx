@@ -16,15 +16,15 @@ function PurchaseOrder() {
   };
 
   return (
-    <div className="w-full mx-auto  bg-white shadow-md rounded-lg p-6 my-6">
+    <div className="w-full max-w-3xl mx-auto bg-white shadow-md rounded-lg p-6 my-6">
       <h2 className="text-2xl font-semibold mb-4 text-center">Purchase Order Module</h2>
-      <form className="flex flex-col gap-4">
+      <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <label className="block">
           Order Date
           <input
             type="date"
             name="orderDate"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+            className="mt-1 block w-full border border-gray-300 bg-gray-50 rounded-md shadow-sm p-2 text-lg"
             onChange={handleChange}
           />
         </label>
@@ -33,7 +33,7 @@ function PurchaseOrder() {
           Supplier
           <select
             name="supplier"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+            className="mt-1 block w-full border border-gray-300 bg-gray-50 rounded-md shadow-sm p-2 text-lg"
             onChange={handleChange}
           >
             <option value="">Select Supplier</option>
@@ -41,10 +41,10 @@ function PurchaseOrder() {
           </select>
         </label>
 
-        <div className="my-4">
-          <h3 className="text-lg font-semibold">Item List within Purchase Order</h3>
-          <button className="bg-green-500 text-white py-1 px-2 rounded mt-2">Add Item</button>
-          <table className="w-full mt-4 border-collapse">
+        <div className="col-span-2 my-4">
+          <h3 className="text-lg font-semibold mb-2">Item List within Purchase Order</h3>
+          <button className="bg-green-500 text-white py-1 px-4 rounded mb-4 hover:bg-green-600">Add Item</button>
+          <table className="w-full border-collapse border border-gray-300">
             <thead>
               <tr>
                 <th className="border p-2">Item No</th>
@@ -68,7 +68,7 @@ function PurchaseOrder() {
           <input
             type="number"
             name="itemTotal"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+            className="mt-1 block w-full border border-gray-300 bg-gray-50 rounded-md shadow-sm p-2 text-lg"
             readOnly
             value={orderData.itemTotal}
           />
@@ -79,7 +79,7 @@ function PurchaseOrder() {
           <input
             type="number"
             name="discount"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+            className="mt-1 block w-full border border-gray-300 bg-gray-50 rounded-md shadow-sm p-2 text-lg"
             onChange={handleChange}
           />
         </label>
@@ -89,19 +89,21 @@ function PurchaseOrder() {
           <input
             type="number"
             name="netAmount"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+            className="mt-1 block w-full border border-gray-300 bg-gray-50 rounded-md shadow-sm p-2 text-lg"
             readOnly
             value={orderData.itemTotal - orderData.discount}
           />
         </label>
+      </form>
 
+      <div className="flex justify-center mt-6">
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 rounded-md mt-4 hover:bg-blue-600 w-fit px-10"
+          className="bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 px-10"
         >
           Save Purchase Order
         </button>
-      </form>
+      </div>
     </div>
   );
 }

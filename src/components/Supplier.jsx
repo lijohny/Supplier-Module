@@ -18,16 +18,17 @@ function Supplier() {
   };
 
   return (
-    <div className="w-full mx-auto bg-white shadow-md rounded-lg p-6 my-6">
+    <div className="w-full max-w-2xl mx-auto bg-white shadow-md rounded-lg p-6 my-6">
       <h2 className="text-2xl font-semibold mb-4 text-center">Supplier Module</h2>
-      <form className="flex flex-col gap-4">
+      <form className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <label className="block">
           Supplier Name
           <input
             type="text"
             name="supplierName"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+            className="mt-1 block w-full border border-gray-400 bg-gray-50 rounded-md shadow-sm p-2 text-lg"
             onChange={handleChange}
+            placeholder="Enter supplier name"
           />
         </label>
         
@@ -36,8 +37,9 @@ function Supplier() {
           <input
             type="text"
             name="address"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+            className="mt-1 block w-full border border-gray-400 bg-gray-50 rounded-md shadow-sm p-2 text-lg"
             onChange={handleChange}
+            placeholder="Enter address"
           />
         </label>
 
@@ -46,8 +48,9 @@ function Supplier() {
           <input
             type="text"
             name="taxNo"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+            className="mt-1 block w-full border border-gray-400 bg-gray-50 rounded-md shadow-sm p-2 text-lg"
             onChange={handleChange}
+            placeholder="Enter TAX number"
           />
         </label>
 
@@ -55,7 +58,7 @@ function Supplier() {
           Country
           <select
             name="country"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+            className="mt-1 block w-full border border-gray-400 bg-gray-50 rounded-md shadow-sm p-2 text-lg"
             onChange={handleChange}
           >
             <option value="India">India</option>
@@ -68,8 +71,9 @@ function Supplier() {
           <input
             type="text"
             name="mobileNo"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+            className="mt-1 block w-full border border-gray-400 bg-gray-50 rounded-md shadow-sm p-2 text-lg"
             onChange={handleChange}
+            placeholder="Enter mobile number"
           />
         </label>
 
@@ -78,8 +82,9 @@ function Supplier() {
           <input
             type="email"
             name="email"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+            className="mt-1 block w-full border border-gray-400 bg-gray-50 rounded-md shadow-sm p-2 text-lg"
             onChange={handleChange}
+            placeholder="Enter email"
           />
         </label>
 
@@ -87,7 +92,7 @@ function Supplier() {
           Status
           <select
             name="status"
-            className="mt-1 block w-full border-gray-300 rounded-md shadow-sm"
+            className="mt-1 block w-full border border-gray-400 bg-gray-50 rounded-md shadow-sm p-2 text-lg"
             onChange={handleChange}
           >
             <option value="Active">Active</option>
@@ -95,14 +100,16 @@ function Supplier() {
             <option value="Blocked">Blocked</option>
           </select>
         </label>
-
+      </form>
+      
+      <div className="flex justify-center mt-4">
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 rounded-md mt-4 hover:bg-blue-600 w-fit px-10"
+          className="bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 px-10"
         >
           Save Supplier
         </button>
-      </form>
+      </div>
     </div>
   );
 }
